@@ -90,6 +90,7 @@ func run(u *url.URL) {
 			if err != nil {
 				log.Println(err)
 				cancel()
+				interrupt <- os.Kill
 				return
 			}
 			var v map[string]interface{}
